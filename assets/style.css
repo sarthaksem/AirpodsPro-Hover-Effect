@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins";
+    color: #eee
+}
+
+body {
+    background: #0f0a0a;
+}
+
+.product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.product-content {
+    height: 400px;
+    width: 300px;
+    border: 2px solid rgba(0, 0, 0, 0.955);
+    border-radius: 5px;
+    background: #000000db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    margin: auto 10px;
+}
+
+.threeDot {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #beff00;
+    cursor: pointer;
+    visibility: visible;
+    transition: .4s;
+    z-index: 1;
+}
+
+.threeDot.active {
+
+    visibility: visible;
+}
+
+img {
+    height: 250px;
+    position: relative;
+    top: 15%;
+    transition: .5s;
+
+
+}
+
+img.active {
+    height: 200px;
+    top: 0;
+
+}
+
+.text1 {
+    font-size: 21px;
+    text-align: center;
+    visibility: hidden;
+    font-weight: 500;
+
+
+}
+
+.text1.active {
+    animation: textAnimation 2s ease forwards;
+}
+
+@keyframes textAnimation {
+    0% {
+        transform: translateY(120px);
+        visibility: hidden;
+        filter: blur(1px);
+    }
+
+    100% {
+        transform: translateY(0px);
+        visibility: visible;
+        filter: blur(0);
+    }
+}
+
+.text2 {
+
+    visibility: hidden;
+}
+
+.text2.active {
+    animation: textAnimation 2s ease forwards;
+    animation-delay: .3s;
+}
+
+.product-content button {
+    height: 30px;
+    width: 90px;
+    background: #beff00;
+    ;
+    border: 2px solid #222;
+    font-size: 11px;
+    color: #222;
+    border-radius: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.product-content .button1 {
+
+    visibility: hidden;
+}
+
+.button1.active {
+    animation: textAnimation 2s ease forwards;
+    animation-delay: .6s;
+}
+
+.product-content .button2 {
+    visibility: hidden;
+}
+
+.button2.active {
+    animation: textAnimation 2s ease forwards;
+    animation-delay: .6s;
+}
+
+.product-details {
+    position: absolute;
+    width: 100%;
+    padding: 10px 0;
+    height: 100%;
+    background: radial-gradient(rgba(255, 255, 255, .2), 10%, #0f0a0a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    bottom: -100%;
+    transition: .5s;
+    transform-origin: bottom;
+}
+
+.product-details.active {
+    bottom: 0;
+}
+
+.product-details h2 {
+    font-size: 21px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.product-details p {
+    font-size: 13px;
+    max-width: 250px;
+    font-weight: 400;
+    text-align: center;
+    margin: 9px 0;
+}
+
+.product-details .rating i {
+    color: #beff00;
+}
+
+.product-details .downArrow {
+    margin: 30px 0;
+    font-size: 50px;
+    color: rgba(255, 255, 255, .7);
+    cursor: pointer;
+}
